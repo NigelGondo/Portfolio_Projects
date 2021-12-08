@@ -36,6 +36,17 @@ GROUP BY location
 ORDER BY Death_Rate desc;
 
 
+-- Top 10 Countries with highest death rate
+SELECT location, 
+	   FORMAT((SUM(new_deaths) / SUM(new_cases)), 'P') as Death_Rate
+FROM CovidDeaths$
+WHERE continent IS NOT NULL
+GROUP BY location
+ORDER BY Death_Rate desc
+OFFSET 0 ROWS
+FETCH NEXT 10 ROWS ONLY;
+
+
 -- Calculating average new deaths of per day for each continent
 SELECT continent, 
 	   AVG(new_deaths) AS Average_Deaths
@@ -86,6 +97,17 @@ FROM CovidVaccinations$
 GROUP BY location, population
 ORDER BY Vaccination_Rate;
 
+
+-- Top 10 Countries driving vaccinations
+SELECT location,
+	   population, 
+	   SUM(new_vaccinations) AS 'New Vaccinations', 
+	   FORMAT(SUM(new_vaccinations) / population, '#,###,###') AS 'Vaccination Rate'
+FROM CovidVaccinations$
+GROUP BY location, population
+ORDER BY 'Vaccination Rate' DESC
+OFFSET 0 ROWS
+FETCH NEXT 10 ROWS ONLY;
 
 -- Joining Tables
 SELECT cd.date, cd.new_cases, cd.new_deaths, cv.new_vaccinations
