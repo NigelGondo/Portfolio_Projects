@@ -1,0 +1,34 @@
+========================================================================
+ World Country Boundaries
+------------------------------------------------------------------------
+ https://koordinates.com/layer/1103-world-country-boundaries/
+========================================================================
+From: DIVA-GIS
+
+Description:
+  Country boundaries from the DIVA-GIS project website.
+  
+  Dated as 2002, so will exclude any name changes / new countries since then.
+  
+  The boundary quality is fairly coarse.
+  
+  Source: http://www.diva-gis.org/data/DataServer.htm#Administrative%20boundaries
+
+Category: Boundaries & Administration
+
+CRS: WGS 84
+
+------------------------------------------------------------------------
+ Processing steps applied by Koordinates
+------------------------------------------------------------------------
+
+- imported to Koordinates in Shapefile format on 01 Jul 2009
+- clipped to (83.623°N 180.000°W)-(85.051°S 180.000°E)
+- converted by Koordinates to Shapefile on 27 May 2024 (reference #3505520)
+
+====================
+No license specified
+====================
+
+No license was specified for this layer. This could mean default rights under copyright law for your legal jurisdiction may apply. Please check with Koordinates if you're unsure of your right to access and use this layer.
+
